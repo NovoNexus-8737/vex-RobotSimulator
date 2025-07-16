@@ -1,14 +1,10 @@
-chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
+chassis.slew_drive_set(false);  // Disables global slew
+chassis.slew_drive_constants_set(5_in, 50);
+
+// Over the first 5 inches, the robot will ramp the speed limit from 50 to 110 
+chassis.pid_drive_set(24_in, 110, true);  // Slew will be enabled for this motion
 chassis.pid_wait();
 
-chassis.pid_turn_set(45_deg, TURN_SPEED);
-chassis.pid_wait();
-
-chassis.pid_swing_set(ez::RIGHT_SWING, -45_deg, SWING_SPEED, 45);
-chassis.pid_wait();
-
-chassis.pid_turn_set(0_deg, TURN_SPEED);
-chassis.pid_wait();
-
-chassis.pid_drive_set(-24_in, DRIVE_SPEED, true);
+// This will not use slew to travel backwards 24in
+chassis.pid_drive_set(-24_in, 110);  
 chassis.pid_wait();

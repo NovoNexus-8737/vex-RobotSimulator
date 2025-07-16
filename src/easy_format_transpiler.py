@@ -25,7 +25,9 @@ def quick_convert(line):
         'pid_wait': 'waitfor',
         'pid_turn_set': 'turn',
         'pid_wait_until': 'waituntil',
+        'slew_drive_set': 'slew_global',
         'slew_drive_constants_set': 'slew',
+        
     }
     action = prefix_map.get(func_name, func_name)
     return ','.join([action] + param_names)
