@@ -11,14 +11,15 @@ vexRobotSimulator:
 
 
 
-
 load_files:
     type: task
-    debug: false
+    debug: true
     script:
+        - debug debug works
         - define path src/output
 
         - foreach <util.list_files[<[path]>]> as:filePath:
-            - ~fileread path:<[filePath]> save:data
-            - define fileData <entry[data].data>
+            - ~fileread path:<[path]>/<[filePath]> save:data
+            - define fileData <entry[data].data.utf8_decode>
+            - debug debug <[fileData]>
 
