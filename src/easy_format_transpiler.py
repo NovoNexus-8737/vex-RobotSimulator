@@ -44,7 +44,7 @@ for filename in os.listdir(INPUT_PATH):
             line = line.split('.', 1)[1]
         result = quick_convert(line)
         if result:
-            all_converted.append(result)
+            all_converted.append(result+"*")
 
     with open(os.path.join(OUTPUT_PATH, filename.split(".")[0]+".txt"), 'w') as out_file:
         out_file.write('\n'.join(all_converted))
