@@ -1,8 +1,9 @@
 import re
 import os
 
-INPUT_PATH = "src/input"
-OUTPUT_PATH = "src/output"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_PATH = os.path.join(BASE_DIR, "input")
+OUTPUT_PATH = os.path.join(BASE_DIR, "output")
 
 def extract_lines(file_path):
     extracted = []
