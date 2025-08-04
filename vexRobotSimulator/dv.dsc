@@ -5,4 +5,4 @@ dv:
     usage: /dv
     script:
         - reload
-        - narrate "<&a>Denizen VEX Robot Simulator loaded successfully!"
+        - narrate "<&6>Denizen reloaded successfully!"

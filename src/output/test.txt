@@ -1,6 +1,0 @@
-slew_global,false*
-slew,5_in,50*
-drive,24_in,110,true*
-waitfor*
-drive,-24_in,110*
-waitfor*
