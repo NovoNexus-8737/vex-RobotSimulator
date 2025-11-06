@@ -77,8 +77,9 @@ rotate_function:
         - define current_angle 0
         - while <[current_angle]> < <[angle]>:
             - debug debug <[current_angle]>
-            - define current_angle <[current_angle].add[<[degrees_per_tick]>]>
-            - wait 1t
+            - define current_angle <[current_angle].add[1]>
+            - if <[loop_index].mod[20]> == 0:
+                - wait 1t
 
 
 # field is 12ftx12ft
